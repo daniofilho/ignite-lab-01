@@ -42,7 +42,7 @@ Criar um novo usuário: createuser --interactive --pwprompt
 
 **query** => buscar dado
 
-```
+```graphql
 query {
   hello
 }
@@ -50,4 +50,24 @@ query {
 
 hello = nome da função criada dentro do resolver
 
+Consultando apenas alguns campos específicos
+
+```graphql
+query {
+  products {
+    title
+  }
+}
+```
+
 **mutation** => criar/deletar/alterar dado
+
+```graphql
+mutation {
+  createProduct(data: { title: "Teste" }) {
+    id
+    title
+    slug
+  }
+}
+```
